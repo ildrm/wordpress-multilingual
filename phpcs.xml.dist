@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<ruleset name="Multilingual Core">
+	<description>WordPress coding standards for Multilingual Core.</description>
+	<file>multilingual-core.php</file>
+	<file>uninstall.php</file>
+	<file>src</file>
+	<exclude-pattern>vendor/*</exclude-pattern>
+	<arg name="basepath" value="."/>
+	<arg name="colors"/>
+	<arg value="sp"/>
+	<rule ref="WordPress-Core"/>
+	<rule ref="WordPress-Extra"/>
+	<!-- PHPCompatibilityWP 2.x crashes under PHP 8.5; CI exercises the minimum runtime separately. -->
+	<rule ref="WordPress.Files.FileName.NotHyphenatedLowercase">
+		<exclude name="WordPress.Files.FileName.NotHyphenatedLowercase"/>
+	</rule>
+	<rule ref="WordPress.Files.FileName.InvalidClassFileName">
+		<exclude name="WordPress.Files.FileName.InvalidClassFileName"/>
+	</rule>
+	<rule ref="Squiz.Commenting.FileComment.Missing">
+		<exclude name="Squiz.Commenting.FileComment.Missing"/>
+	</rule>
+	<rule ref="Squiz.Commenting.FileComment.MissingPackageTag">
+		<exclude name="Squiz.Commenting.FileComment.MissingPackageTag"/>
+	</rule>
+	<rule ref="WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase">
+		<exclude name="WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase"/>
+	</rule>
+	<rule ref="WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase">
+		<exclude name="WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase"/>
+	</rule>
+	<rule ref="WordPress.NamingConventions.ValidFunctionName.MethodNameInvalid">
+		<exclude name="WordPress.NamingConventions.ValidFunctionName.MethodNameInvalid"/>
+	</rule>
+	<rule ref="WordPress.WP.Capabilities">
+		<properties>
+			<property name="custom_capabilities" type="array">
+				<element value="mlc_translate"/>
+				<element value="mlc_manage_languages"/>
+				<element value="mlc_view_health"/>
+			</property>
+		</properties>
+	</rule>
+</ruleset>

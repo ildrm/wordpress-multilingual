@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "multilingual-core/language-switcher",
+  "version": "0.1.0",
+  "title": "Language Switcher",
+  "category": "widgets",
+  "icon": "translation",
+  "description": "Links to available language editions of the current page.",
+  "textdomain": "multilingual-core",
+  "editorScript": "file:./index.js",
+  "attributes": {
+    "hideCurrent": { "type": "boolean", "default": false },
+    "hideMissing": { "type": "boolean", "default": true }
+  },
+  "supports": {
+    "html": false,
+    "align": true
+  }
+}
+

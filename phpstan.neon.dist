@@ -1,0 +1,12 @@
+parameters:
+    level: 7
+    paths:
+        - src
+    excludePaths:
+        - src/Autoloader.php
+    bootstrapFiles:
+        - tests/bootstrap/phpstan.php
+    scanFiles:
+        - vendor/php-stubs/wordpress-stubs/wordpress-stubs.php
+        - vendor/php-stubs/wp-cli-stubs/wp-cli-stubs.php
+    treatPhpDocTypesAsCertain: false
